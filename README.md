@@ -1,2 +1,2 @@
-# LinuxFromScratch
-Why oh why? Because I can.
+# Linux From Scratch
+Let's get this!
