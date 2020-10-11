@@ -1,0 +1,8 @@
+export LFS=/mnt/lfs
+
+sudo mount -v -t ext4 /dev/sdb2 $LFS
+sudo mount -v -t ext2 /dev/sdb1 $LFS/boot
+
+sudo /sbin/swapon -v /dev/sdb3
+
+su - lfs
