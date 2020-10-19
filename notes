@@ -1,6 +1,12 @@
 #ALWAYS EXPORT
 #WHEN SWITCHING TO SU, EXPORT AGAIN
 
+run system-check.sh
+
+ALSO this...
+
+
+sudo apt install gcc-multilib
 export LFS=/mnt/lfs
 mkdir $LFS
 mkdir $LFS/boot
