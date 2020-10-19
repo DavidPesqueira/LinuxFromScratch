@@ -1,0 +1,30 @@
+#ALWAYS EXPORT
+#WHEN SWITCHING TO SU, EXPORT AGAIN
+
+export LFS=/mnt/lfs
+mkdir $LFS
+mkdir $LFS/boot
+mkdir $LFS/usr
+mkdir $LFS/opt
+mkdir $LFS/tmp
+mkdir $LFS/usr/src
+
+
+mkfs -v -t ext2 /dev/sdb1   #200M
+mkfs -v -t ext4 /dev/sdb2   #/usr 10G
+mkfs -v -t ext4 /dev/sdb3   #/opt 10G
+mkfs -v -t ext4 /dev/sdb4   #/tmp 2G
+mkfs -v -t ext4 /dev/sdb5   #/usr/src 40G
+mkfs -v -t ext4 /dev/sdb6   #/home 34G
+mkswap /dev/sdb7             #SWAP 3.8G
+
+
+mount -v -t ext2 /dev/sdb1 $LFS/boot
+mount -v -t ext4 /dev/sdb2 $LFS/usr
+mount -v -t ext4 /dev/sdb3 $LFS/opt
+mount -v -t ext4 /dev/sdb4 $LFS/tmp
+mount -v -t ext4 /dev/sdb5 $LFS/usr/src
+mount -v -t ext4 /dev/sdb6 $LFS
+/sbin/swapon -v /dev/sdb7
+
+su - lfs
