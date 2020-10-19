@@ -5,8 +5,11 @@ run system-check.sh
 
 ALSO this...
 
+sudo dpkg-reconfigure dash #To point to bash
 
-sudo apt install gcc-multilib
+sudo apt install gcc-multilib #For later but needed
+
+
 export LFS=/mnt/lfs
 mkdir $LFS
 mkdir $LFS/boot
