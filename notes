@@ -27,4 +27,14 @@ mount -v -t ext4 /dev/sdb5 $LFS/usr/src
 mount -v -t ext4 /dev/sdb6 $LFS
 /sbin/swapon -v /dev/sdb7
 
+
+chmod -v a+wt $LFS/boot
+chmod -v a+wt $LFS/usr
+chmod -v a+wt $LFS/opt
+chmod -v a+wt $LFS/tmp
+chmod -v a+wt $LFS/usr/src
+chmod -v a+wt $LFS
+
+
+
 su - lfs
